@@ -1,0 +1,17 @@
+import unittest
+from EmotionDetection.emotion_detection import emotion_detector
+
+class EmotionDetectionTest(unittest.TestCase):
+    def test_emotion_detector(self):
+        self.assertEqual(emotion_detector("I am glad this happened")['dominant_emotion'], 'joy')
+        print("Test 'joy' passed")
+        self.assertEqual(emotion_detector("I am really mad about this")['dominant_emotion'], 'anger')
+        print("Test 'anger' passed")
+        self.assertEqual(emotion_detector("I feel disgusted just hearing about this")['dominant_emotion'], 'disgust')
+        print("Test 'disgust' passed")
+        self.assertEqual(emotion_detector("I am so sad about this")['dominant_emotion'], 'sadness')
+        print("Test 'sadness' passed")
+        self.assertEqual(emotion_detector("I am really afraid that this will happen")['dominant_emotion'], 'fear')
+        print("Test 'fear' passed")
+
+unittest.main()
